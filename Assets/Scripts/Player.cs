@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     public int score;
     Rigidbody rb;
     public float speed;
+    public TextMeshProUGUI scoreUI;
+
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         rb = GetComponent<Rigidbody>();
+        SetScore();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        SetScore();
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -45,5 +49,10 @@ public class Player : MonoBehaviour
     public void Score()
     {
         score += 1;
+    }
+    public void SetScore()
+    {
+        scoreUI.text = "Score: " + score.ToString();
+
     }
 }

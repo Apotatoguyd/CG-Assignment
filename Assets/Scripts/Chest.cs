@@ -9,6 +9,7 @@ public class Chest : MonoBehaviour
         if(other.gameObject.TryGetComponent(out Player player))
         {
             player.Score();
+            Debug.Log("touch");
         }
         Destroy(gameObject);
     }
