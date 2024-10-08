@@ -12,5 +12,6 @@ public class Chest : MonoBehaviour
             Debug.Log("touch");
         }
         Destroy(gameObject);
+        Debug.Log("touch");
     }
 }
