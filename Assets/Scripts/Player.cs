@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     Rigidbody rb;
     public float speed;
     public TextMeshProUGUI scoreUI;
+    public WinCondition WC;
 
     // Start is called before the first frame update
     void Start()
@@ -23,23 +24,23 @@ public class Player : MonoBehaviour
     {
         SetScore();
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && WC.allowMove)
         {
             rb.AddForce(transform.right * speed);
            
 
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && WC.allowMove)
         {
             rb.AddForce(-transform.right * speed);
             
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && WC.allowMove)
         {
             rb.AddForce(transform.forward * speed);
             
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && WC.allowMove)
         {
             rb.AddForce(-transform.forward * speed);
       
