@@ -30,7 +30,7 @@ Shader "Custom/Holograms"
                 float4 LightingToonRamp (SurfaceOutput s, fixed3 lightDir, fixed atten)
         {            
             float diff = dot (s.Normal, lightDir);
-            float h = diff * 0.5 + 0.5;
+            float h = diff * 0.3+0.3;
             float2 rh = h;
             float3 ramp = tex2D(_RampTex, rh).rgb;
 

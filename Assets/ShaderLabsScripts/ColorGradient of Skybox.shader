@@ -3,35 +3,77 @@ Shader "Custom/Colorgradient"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _ColorTint ("Tint", Color) = (1.0, 0.6, 0.6, 1.0)
+        _LUT("LUT", 2D) = "white"{}
+        _Contribution("Contribution", Range(0,1)) = 1
+
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        
-
-        CGPROGRAM
-        // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Lambert finalcolor:mycolor
-
-
-        
-
-        struct Input
+        Cull Off ZWrite Off ZTest Always
+        Pass
         {
-            float2 uv_MainTex;
+        CGPROGRAM
+     
+        #pragma vertex vert
+        #pragma fragment frag
+
+        #include "UnityCG.cginc"
+
+        #define COLORS 32.0
+
+
+
+
+        
+
+        struct appdata
+        {
+            float4 vertex : POSITION;
+            float2 uv :TEXCOORD0;
         };
 
-        fixed4 _ColorTint;
-        void mycolor (Input IN, SurfaceOutput o, inout fixed4 color){
-               color *= _ColorTint;
+        struct v2f
+        {
+          float2 uv : TEXCOORD0;
+          float4 vertex : POSITION;
+
+        };
+
+        v2f vert (appdata v)
+        {
+            v2f o;
+            o.vertex = UnityObjectToClipPos(v.vertex);
+            o.uv = v.uv;
+            return o;
+        }
+
+            sampler2D _MainTex;
+            sampler2D _LUT;
+            float4 _LUT_TexelSize;
+            float _Contribution;
+
+            fixed4 frag (v2f i) : SV_Target
+            {
+                float maxColor = COLORS - 1.0;
+                fixed4 col = saturate(tex2D(_MainTex, i.uv));
+                float halfColX = 0.5 / _LUT_TexelSize.z;
+                float halfColY = 0.5 / _LUT_TexelSize.w;
+                float threshold = maxColor / COLORS;
+                            float xOffset = halfColX + col.r * threshold / COLORS;
+            float yOffset = halfColY + col.g * threshold;
+            float cell = floor(col.b * maxColor);
+            float2 lutPos = float2(cell / COLORS + xOffset, yOffset);
+            float4 gradedCol = tex2D(_LUT, lutPos);
+            return lerp(col, gradedCol, _Contribution);
+
             }
 
-        sampler2D _MainTex;
-        void surf (Input IN, inout SurfaceOutput o){
-            o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
-        }
+
+
+        
         ENDCG
+        }
+
     }
-    FallBack "Diffuse"
+
 }
