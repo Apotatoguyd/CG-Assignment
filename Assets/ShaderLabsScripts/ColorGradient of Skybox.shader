@@ -5,7 +5,6 @@ Shader "Custom/Colorgradient"
         _MainTex ("Texture", 2D) = "white" {}
         _LUT("LUT", 2D) = "white"{}
         _Contribution("Contribution", Range(0,1)) = 1
-
     }
     SubShader
     {
@@ -20,11 +19,6 @@ Shader "Custom/Colorgradient"
         #include "UnityCG.cginc"
 
         #define COLORS 32.0
-
-
-
-
-        
 
         struct appdata
         {
@@ -68,9 +62,6 @@ Shader "Custom/Colorgradient"
 
             }
 
-
-
-        
         ENDCG
         }
 

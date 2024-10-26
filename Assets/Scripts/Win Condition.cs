@@ -12,7 +12,7 @@ public class WinCondition : MonoBehaviour
     bool loseCondition;
     public GameObject loseConditionOBJ;
     public TextMeshProUGUI timerText;
-    private float timer = 15.0f;
+    public float timer;
     private float finalTime;
     public bool allowMove = true;
     public Player p;
@@ -46,7 +46,7 @@ public class WinCondition : MonoBehaviour
             timer -= Time.deltaTime;
             CountdownTimer();
         }
-        if (timer == 0 )
+        if (timer <= 0 )
         {
             loseConditionOBJ.SetActive(true);
             allowMove = false;

@@ -19,10 +19,7 @@ Shader "Custom/Holograms"
             }
 
         CGPROGRAM
-       
         #pragma surface surf ToonRamp finalcolor:mycolor
-
-        
         float4 _Color;
         sampler2D _RampTex;
         sampler2D _MainTex;
@@ -38,7 +35,6 @@ Shader "Custom/Holograms"
             c.rgb = s.Albedo * _LightColor0.rgb * (ramp);
             c.a = s.Alpha;
             return c;
-
         }
 
         struct Input
