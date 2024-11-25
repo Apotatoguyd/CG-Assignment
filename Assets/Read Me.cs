@@ -12,4 +12,7 @@ https://assetstore.unity.com/packages/2d/textures-materials/floors/yughues-free-
 The LUT was edited to create a toon feel to the game, since toon shaders don't work very well with flat surfaces the LUT is used to fix that. 
 
 
+
+COURSE PROJECT CHANGES
+Revised player shader: changed to make the player have a toon feel
 */
