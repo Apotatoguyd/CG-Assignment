@@ -9,6 +9,8 @@ Shader "Custom/New Sand"
         _Metallic ("Metallic", Range(0.0, 1.0)) = 0.0
          _ScrollX ("Scroll X", Range(-5,5)) = 1
         _ScrollY ("Scroll Y", Range(-5,5)) = 1
+        _MainTex ("Main Texture", 2D) = "white" {}
+        _ScrollTex ("Main Texture", 2D) = "white" {}
     }
     SubShader
     {
@@ -22,10 +24,14 @@ Shader "Custom/New Sand"
         sampler2D _MetallicTex;
         float _ScrollX;
         float _ScrollY;
+        sampler2D _MainTex;
+        sampler2D _ScrollTex;
+        
         struct Input
         {
             float2 uv_MetallicTex;
             float2 uv_Bump;
+            float2 uv_MainTex;
         };
 
         half _Metallic;
@@ -35,14 +41,16 @@ Shader "Custom/New Sand"
 
         void surf (Input IN, inout SurfaceOutputStandardSpecular o)
         {
-        _ScrollX *= _Time;
-        _ScrollY *= _Time;
-        float2 newuv = (IN.uv_MetallicTex, IN.uv_Bump) + float2(_ScrollX, _ScrollY);
-         o.Albedo = _Color.rgb;
-         o.Smoothness = tex2D(_MetallicTex, IN.uv_MetallicTex).r;
-         o.Specular = _Metallic;
-         o.Normal = UnpackNormal(tex2D(_Bump, IN.uv_Bump));
-         o.Normal *= float3(_BumpSlider, _BumpSlider,1);
+            _ScrollX *= _Time/5.0;
+            _ScrollY *= _Time/5.0;
+            float3 sand = tex2D(_MainTex, IN.uv_MainTex + float2(_ScrollX, _ScrollY)).rgb;
+            float3 scroll = tex2D(_MainTex, IN.uv_MainTex + float2(_ScrollX/2.0, _ScrollY/2.0));
+            float2 newuv = (IN.uv_MetallicTex, IN.uv_Bump) + float2(_ScrollX, _ScrollY);
+            o.Albedo = (sand + scroll)*_Color.rgb;
+            o.Smoothness = tex2D(_MetallicTex, IN.uv_MetallicTex).r;
+            o.Specular = _Metallic;
+            o.Normal = UnpackNormal(tex2D(_Bump, IN.uv_Bump));
+            o.Normal *= float3(_BumpSlider, _BumpSlider,1);
 
         }
         ENDCG
