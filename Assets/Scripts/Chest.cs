@@ -14,4 +14,9 @@ public class Chest : MonoBehaviour
         Destroy(gameObject);
         Debug.Log("touch");
     }
+
+    private void Update()
+    {
+        gameObject.transform.Rotate(new Vector3(0, 1, 0));
+    }
 }

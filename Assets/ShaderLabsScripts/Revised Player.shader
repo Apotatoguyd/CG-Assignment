@@ -30,7 +30,7 @@ Shader "Custom/Revised Player"
                 float4 LightingToonRamp (SurfaceOutput s, fixed3 lightDir, fixed atten)
         {            
             float diff = dot (s.Normal, lightDir);
-            float h = diff * 0.2+0.5;
+            float h = diff * 0.1+0.7;
             float2 rh = h;
             float3 ramp = tex2D(_RampTex, rh).rgb;
 

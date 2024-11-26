@@ -52,7 +52,7 @@ Shader "Custom/Revised Chest"
             o.Albedo = _Color.rgb;
             o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
             half rim = 1.0 - saturate(dot(normalize(IN.viewDir), o.Normal));
-            o.Emission = _RimColor.rgb * pow(rim, _RimPower) * 10;
+            o.Emission = _RimColor.rgb * pow(rim, _RimPower) * 1;
             o.Alpha - pow(rim, _RimColor);
         }
         ENDCG
