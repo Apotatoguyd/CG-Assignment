@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2545686508110475013}
   m_Layer: 0
   m_Name: RevisedPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2903415981261735728}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: bce2ed423550a6b40af32cc97a6a21cc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   winConditionOBJ: {fileID: 0}
   finalTimeToFinish: {fileID: 0}
   loseConditionOBJ: {fileID: 0}
+  textureChange: {fileID: 0}
   timerText: {fileID: 0}
   timer: 210
   allowMove: 1

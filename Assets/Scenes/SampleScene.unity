@@ -530,6 +530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d50b8f65c35a5984786b883a19665649, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: d50b8f65c35a5984786b883a19665649, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.6
@@ -541,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: d50b8f65c35a5984786b883a19665649, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: d50b8f65c35a5984786b883a19665649, type: 3}
+      propertyPath: m_TagString
+      value: Chest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1588,6 +1596,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d50b8f65c35a5984786b883a19665649, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: d50b8f65c35a5984786b883a19665649, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.6
@@ -1599,6 +1611,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: d50b8f65c35a5984786b883a19665649, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: d50b8f65c35a5984786b883a19665649, type: 3}
+      propertyPath: m_TagString
+      value: Chest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2454,6 +2470,13 @@ MonoBehaviour:
     GateFit: 2
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2647,6 +2670,8 @@ MonoBehaviour:
   selectedMaterial: {fileID: 2100000, guid: 197e882fdb276d948abb8806a43ab81c, type: 2}
   surface:
   - {fileID: 882592032}
+  chest: []
+  swapped: 0
   _object:
   - {fileID: 882592037}
 --- !u!4 &1291833770
@@ -2680,6 +2705,8 @@ MonoBehaviour:
   selectedMaterial: {fileID: 2100000, guid: 50025ec2e45d3e94a8aba69c545d418b, type: 2}
   surface:
   - {fileID: 1118233350}
+  chest: []
+  swapped: 0
   _object:
   - {fileID: 1118233352}
 --- !u!114 &1291833772
@@ -2704,6 +2731,8 @@ MonoBehaviour:
   - {fileID: 1955226253}
   - {fileID: 2142968865}
   - {fileID: 1637281590}
+  chest: []
+  swapped: 0
   _object:
   - {fileID: 88773505}
   - {fileID: 1782541638}
@@ -2730,6 +2759,8 @@ MonoBehaviour:
   - {fileID: 2028744329}
   - {fileID: 1300348047}
   - {fileID: 734241828}
+  chest: []
+  swapped: 0
   _object:
   - {fileID: 2028744336}
   - {fileID: 1300348052}
@@ -4254,7 +4285,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1291833773}
         m_TargetAssemblyTypeName: ChangeMaterial, Assembly-CSharp
-        m_MethodName: SwapMaterial
+        m_MethodName: ChangeChest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4366,6 +4397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d50b8f65c35a5984786b883a19665649, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: d50b8f65c35a5984786b883a19665649, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.6
@@ -4377,6 +4412,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: d50b8f65c35a5984786b883a19665649, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: d50b8f65c35a5984786b883a19665649, type: 3}
+      propertyPath: m_TagString
+      value: Chest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5586,6 +5625,10 @@ PrefabInstance:
     - target: {fileID: 2903415981261735728, guid: 880eaecbf1a569b47b6e9b331825b8bd, type: 3}
       propertyPath: m_Name
       value: RevisedPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580654245266824407, guid: 880eaecbf1a569b47b6e9b331825b8bd, type: 3}
+      propertyPath: timer
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3580654245266824407, guid: 880eaecbf1a569b47b6e9b331825b8bd, type: 3}
       propertyPath: timerText

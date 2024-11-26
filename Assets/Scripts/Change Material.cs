@@ -11,8 +11,10 @@ public class ChangeMaterial : MonoBehaviour
     public Material defaultMaterial;
     public Material selectedMaterial;
     public GameObject[] surface;
-
+    public GameObject[] chest;
+    public bool swapped;
     public MeshRenderer[] _object;
+    
 
     void Start()
     {
@@ -22,9 +24,16 @@ public class ChangeMaterial : MonoBehaviour
             selectedMaterial = _object[i].material;
             defaultMaterial.mainTextureScale = selectedMaterial.mainTextureScale;
         }
-
+        for(int j = 0; j < chest.Length; j++)
+        {
+            chest[j].gameObject.GetComponent<MeshRenderer>().material = selectedMaterial;
+        }
     }
 
+    void Update()
+    {
+        chest = GameObject.FindGameObjectsWithTag("Chest");
+    }
     public void SwapMaterial()
     {
         for (int i = 0; i < surface.Length; i++)
@@ -32,5 +41,32 @@ public class ChangeMaterial : MonoBehaviour
             _object[i].material = _object[i].material.name.StartsWith(defaultMaterial.name) ? selectedMaterial : defaultMaterial;
         }
 
+    }
+    
+    public void ChangeChest()
+    {
+        if (swapped == false)
+        {
+            for (int j = 0; j < chest.Length; j++)
+            {
+                //wall[j].gameObject.GetComponent<MeshRenderer>().material = _object[j].material.name.StartsWith(defaultMaterial.name) ? selectedMaterial : defaultMaterial;
+                chest[j].GetComponent<Renderer>().material = defaultMaterial;
+                print(chest[j] + " changed material");
+            }
+
+            swapped = true;
+        }
+
+        else
+        {
+            for (int j = 0; j < chest.Length; j++)
+            {
+                //wall[j].gameObject.GetComponent<MeshRenderer>().material = _object[j].material.name.StartsWith(defaultMaterial.name) ? selectedMaterial : defaultMaterial;
+                chest[j].GetComponent<Renderer>().material = selectedMaterial;
+                print(chest[j] + " changed material");
+            }
+
+            swapped = false;
+        }
     }
 }
