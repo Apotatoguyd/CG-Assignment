@@ -11,6 +11,9 @@ Shader "Custom/Revised Player"
           _Amount("Extrude", Range(-1,2)) = 0.01
         _OutlineColor ("Outline Color", Color) = (0,0,0,1)
         _Outline ("Outline Width", Range (0.02,1)) = .005
+        _Toon1("Toonramp1", Range(0.0,1.0)) = 0.5
+        _Toon2("Toonramp2", Range(0.0,1.0)) = 0.5
+
     }
     SubShader
     {
@@ -24,13 +27,15 @@ Shader "Custom/Revised Player"
         CGPROGRAM
         #pragma surface surf ToonRamp finalcolor:mycolor
         float4 _Color;
+        float _Toon1;
+        float _Toon2;
         sampler2D _RampTex;
         sampler2D _MainTex;
 
                 float4 LightingToonRamp (SurfaceOutput s, fixed3 lightDir, fixed atten)
         {            
             float diff = dot (s.Normal, lightDir);
-            float h = diff * 0.1+0.7;
+            float h = diff * _Toon1 + _Toon2;
             float2 rh = h;
             float3 ramp = tex2D(_RampTex, rh).rgb;
 
