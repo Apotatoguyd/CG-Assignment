@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
+    public ParticleSystem p;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.TryGetComponent(out Player player))
         {
             player.Score();
             Debug.Log("touch");
+            p.Play();
         }
         Destroy(gameObject);
         Debug.Log("touch");
