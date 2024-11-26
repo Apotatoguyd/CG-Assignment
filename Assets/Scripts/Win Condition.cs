@@ -11,6 +11,7 @@ public class WinCondition : MonoBehaviour
     public TextMeshProUGUI finalTimeToFinish;
     bool loseCondition;
     public GameObject loseConditionOBJ;
+    public GameObject textureChange;
     public TextMeshProUGUI timerText;
     public float timer;
     private float finalTime;
@@ -32,6 +33,7 @@ public class WinCondition : MonoBehaviour
 
         if (winCondition)
         {
+            textureChange.SetActive(false);
             winConditionOBJ.SetActive(true);
             allowMove = false;
         }
@@ -48,6 +50,7 @@ public class WinCondition : MonoBehaviour
         }
         if (timer <= 0 )
         {
+            textureChange.SetActive(false);
             loseConditionOBJ.SetActive(true);
             allowMove = false;
         }

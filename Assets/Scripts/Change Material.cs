@@ -11,12 +11,12 @@ public class ChangeMaterial : MonoBehaviour
     public Material defaultMaterial;
     public Material selectedMaterial;
     public GameObject[] surface;
-    
+
     public MeshRenderer[] _object;
 
     void Start()
     {
-        for (int i = 0; i < _object.Length; i++)
+        for (int i = 0; i < surface.Length; i++)
         {
             _object[i] = surface[i].GetComponent<MeshRenderer>();
             selectedMaterial = _object[i].material;
@@ -31,6 +31,6 @@ public class ChangeMaterial : MonoBehaviour
         {
             _object[i].material = _object[i].material.name.StartsWith(defaultMaterial.name) ? selectedMaterial : defaultMaterial;
         }
-        
+
     }
 }
