@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1e8627ab2fdc64b8728519e7fc0cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: 7aaa9d571d9b70c4dbc0f4123dbfebc5, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 44689932409280c4091fcd312ac80d61, type: 2}
   selectedMaterial: {fileID: 2100000, guid: a92b469d36f7fb743b86a7eb5883e3e1, type: 2}
   surface:
   - {fileID: 1601251838}
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1e8627ab2fdc64b8728519e7fc0cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: 7aaa9d571d9b70c4dbc0f4123dbfebc5, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 7da71baa4a381f24da5866a915a0da4d, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 50025ec2e45d3e94a8aba69c545d418b, type: 2}
   surface:
   - {fileID: 345777868}
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1e8627ab2fdc64b8728519e7fc0cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: 7aaa9d571d9b70c4dbc0f4123dbfebc5, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: e9e3cfa5eb43fe645bfb3d01a2e9a76f, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 197e882fdb276d948abb8806a43ab81c, type: 2}
   surface:
   - {fileID: 1272995520}
@@ -11266,6 +11266,7 @@ GameObject:
   - component: {fileID: 1905004258}
   - component: {fileID: 1905004261}
   - component: {fileID: 1905004262}
+  - component: {fileID: 1905004263}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11394,6 +11395,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   render: {fileID: 2100000, guid: 49a908938d1f2d2439cc9926ac017b99, type: 2}
+--- !u!114 &1905004263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905004257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0196c36f6edb0d846bc899dbd999daad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pixelateMat: {fileID: 2100000, guid: 30991dbb9754ca1468eec86f55701947, type: 2}
+  pixelDensity: 400
 --- !u!1 &1917275489
 GameObject:
   m_ObjectHideFlags: 0

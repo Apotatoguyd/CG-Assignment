@@ -1748,6 +1748,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1876,6 +1877,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   render: {fileID: 2100000, guid: 49a908938d1f2d2439cc9926ac017b99, type: 2}
+--- !u!114 &963194231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0196c36f6edb0d846bc899dbd999daad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pixelateMat: {fileID: 2100000, guid: 30991dbb9754ca1468eec86f55701947, type: 2}
+  pixelDensity: 400
 --- !u!1 &971245674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1275777077}
   - component: {fileID: 1275777076}
+  - component: {fileID: 1275777078}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -2501,6 +2517,20 @@ Transform:
   - {fileID: 384154633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275777078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275777075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0196c36f6edb0d846bc899dbd999daad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_pixelateMat: {fileID: 2100000, guid: 30991dbb9754ca1468eec86f55701947, type: 2}
+  pixelDensity: 64
 --- !u!1 &1291056454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,7 +2696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1e8627ab2fdc64b8728519e7fc0cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: 7aaa9d571d9b70c4dbc0f4123dbfebc5, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: e9e3cfa5eb43fe645bfb3d01a2e9a76f, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 197e882fdb276d948abb8806a43ab81c, type: 2}
   surface:
   - {fileID: 882592032}
@@ -2701,7 +2731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1e8627ab2fdc64b8728519e7fc0cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: 7aaa9d571d9b70c4dbc0f4123dbfebc5, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 7da71baa4a381f24da5866a915a0da4d, type: 2}
   selectedMaterial: {fileID: 2100000, guid: 50025ec2e45d3e94a8aba69c545d418b, type: 2}
   surface:
   - {fileID: 1118233350}
@@ -2722,7 +2752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultMaterial: {fileID: 2100000, guid: 7aaa9d571d9b70c4dbc0f4123dbfebc5, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: a92b469d36f7fb743b86a7eb5883e3e1, type: 2}
+  selectedMaterial: {fileID: 2100000, guid: 0cb8a0cd9f18b004d955b4465ef36316, type: 2}
   surface:
   - {fileID: 88773503}
   - {fileID: 1782541636}
@@ -2753,8 +2783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1e8627ab2fdc64b8728519e7fc0cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMaterial: {fileID: 2100000, guid: 7aaa9d571d9b70c4dbc0f4123dbfebc5, type: 2}
-  selectedMaterial: {fileID: 2100000, guid: 0cb8a0cd9f18b004d955b4465ef36316, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 44689932409280c4091fcd312ac80d61, type: 2}
+  selectedMaterial: {fileID: 2100000, guid: a92b469d36f7fb743b86a7eb5883e3e1, type: 2}
   surface:
   - {fileID: 2028744329}
   - {fileID: 1300348047}
